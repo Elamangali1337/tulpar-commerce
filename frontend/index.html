@@ -46,15 +46,22 @@
 
     <!-- 1. Главный экран (Hero Section) -->
     <section id="hero" class="min-h-screen flex flex-col relative">
-        <!-- Header (Логотип и Навигация) -->
         <header class="w-full p-6 absolute top-0 left-0 flex justify-between items-center z-10">
             <div class="flex items-center gap-3">
                 <!-- Временная иконка логотипа (золотой ромб) -->
                 <div class="w-8 h-8 bg-gold rotate-45 rounded-sm"></div>
                 <span class="text-2xl font-semibold tracking-wide text-white">Tulpar Commerce</span>
             </div>
+            
+            <!-- Центральное меню навигации (скрыто на мобильных) -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#services" class="hover:text-gold transition-colors">Services</a>
+                <a href="#industries" class="hover:text-gold transition-colors">Industries</a>
+                <a href="#how-it-works" class="hover:text-gold transition-colors">How It Works</a>
+            </nav>
+
             <!-- Ссылка на форму обратной связи в шапке -->
-            <a href="#contact" class="hidden md:block text-sm font-medium text-gray-300 hover:text-gold transition-colors">
+            <a href="#contact" class="hidden md:block px-5 py-2 text-sm font-medium text-gold border border-gold/50 rounded-lg hover:bg-gold hover:text-black transition-all duration-300">
                 Contact Us
             </a>
         </header>
@@ -278,10 +285,15 @@
             
             <!-- Ссылки -->
             <div class="flex flex-col md:flex-row gap-6 text-sm text-gray-500">
+                <!-- Ссылка открывает почтовый клиент -->
                 <a href="mailto:contact@tulparcommerce.com" class="hover:text-gold transition-colors">contact@tulparcommerce.com</a>
-                <a href="#" class="hover:text-gold transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+                
+                <!-- Ссылка на LinkedIn (открывается в новой вкладке) -->
+                <a href="https://www.linkedin.com/company/tulparcommerce" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">LinkedIn</a>
+                
+                <!-- Пока страниц с политикой нет, оставим возврат наверх страницы или можно убрать их -->
+                <a href="#hero" class="hover:text-gold transition-colors">Privacy Policy</a>
+                <a href="#hero" class="hover:text-gold transition-colors">Terms of Service</a>
             </div>
         </div>
         <div class="max-w-6xl mx-auto mt-8 text-center text-xs text-gray-700">
