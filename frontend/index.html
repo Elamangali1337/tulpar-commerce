@@ -314,7 +314,7 @@
             try {
                 // Отправляем POST запрос на локальный сервер FastAPI
                 // ВАЖНО: Когда будешь деплоить бэкенд в интернет, здесь нужно будет заменить URL!
-                const response = await fetch('http://127.0.0.1:8000/api/contact', {
+                const response = await fetch('https://tulpar-api-2bs9.onrender.com', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
