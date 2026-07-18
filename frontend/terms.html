@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Tulpar Commerce</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: { DEFAULT: '#D4AF37', hover: '#C5A059' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #000000; color: #ffffff; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="antialiased selection:bg-gold selection:text-black">
+
+    <!-- Шапка: логотип + ссылка назад -->
+    <header class="w-full p-6 flex justify-between items-center border-b border-zinc-800">
+        <a href="index.html" class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-gold rotate-45 rounded-sm"></div>
+            <span class="text-2xl font-semibold tracking-wide text-white">Tulpar Commerce</span>
+        </a>
+        <a href="index.html" class="px-5 py-2 text-sm font-medium text-gold border border-gold/50 rounded-lg hover:bg-gold hover:text-black transition-all duration-300">
+            &larr; Back to Home
+        </a>
+    </header>
+
+    <!-- Контент документа -->
+    <main class="max-w-3xl mx-auto px-6 py-20">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Terms of <span class="text-gold">Service</span></h1>
+        <p class="text-gray-500 text-sm mb-12">Last updated: July 17, 2026</p>
+
+        <div class="space-y-10 text-gray-300 leading-relaxed">
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">1. Acceptance of Terms</h2>
+                <p>By accessing or using the Tulpar Commerce website ("the Site"), you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, please do not use the Site.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">2. Our Services</h2>
+                <p>Tulpar Commerce provides consulting and integration services that help businesses accept cryptocurrency payments through third-party payment providers. The Site itself is informational: it describes our services and allows you to contact us. Any engagement for actual integration work is governed by a separate written agreement between you and Tulpar Commerce.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">3. Crypto Converter Disclaimer</h2>
+                <p class="mb-3">The cryptocurrency converter on the Site displays exchange rates sourced from third-party market-data providers. Rates are provided for informational purposes only, may be delayed, and may differ from rates offered by exchanges or payment providers at the time of an actual transaction.</p>
+                <p>Nothing on the Site constitutes financial, investment, legal, or tax advice. You should not rely on the converter or any other content on the Site as a basis for financial decisions. Cryptocurrency values are volatile, and transactions involving digital assets carry inherent risk.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">4. Acceptable Use</h2>
+                <p>You agree not to misuse the Site, including by attempting to gain unauthorized access to our systems, submitting false or misleading information through our contact form, scraping or overloading our services, or using the Site for any unlawful purpose.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">5. Intellectual Property</h2>
+                <p>All content on the Site — including text, design, logos, and graphics — is the property of Tulpar Commerce and is protected by applicable intellectual property laws. You may not reproduce or distribute Site content without our prior written consent.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">6. Third-Party Links and Services</h2>
+                <p>The Site may reference or link to third-party services, including payment providers and market-data sources. We do not control and are not responsible for the content, policies, or practices of any third party.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">7. Limitation of Liability</h2>
+                <p>The Site is provided "as is" and "as available", without warranties of any kind, express or implied. To the maximum extent permitted by law, Tulpar Commerce shall not be liable for any indirect, incidental, or consequential damages arising from your use of the Site, including reliance on displayed exchange rates or temporary unavailability of the Site.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">8. Changes to These Terms</h2>
+                <p>We may revise these Terms of Service at any time. Updated terms will be posted on this page with a new revision date, and your continued use of the Site constitutes acceptance of the updated terms.</p>
+            </section>
+
+            <section>
+                <h2 class="text-2xl font-semibold text-white mb-3">9. Contact</h2>
+                <p>Questions about these Terms can be sent to <a href="mailto:contact@tulparcommerce.com" class="text-gold hover:underline">contact@tulparcommerce.com</a>.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Подвал -->
+    <footer class="py-12 px-6 bg-black border-t border-zinc-800 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+            <div class="w-6 h-6 bg-gold rotate-45 rounded-sm"></div>
+            <span class="text-xl font-semibold tracking-wide text-white">Tulpar Commerce</span>
+        </div>
+        <div class="flex justify-center gap-6 text-sm text-gray-500 mb-6">
+            <a href="index.html" class="hover:text-gold transition-colors">Home</a>
+            <a href="privacy.html" class="hover:text-gold transition-colors">Privacy Policy</a>
+            <a href="mailto:contact@tulparcommerce.com" class="hover:text-gold transition-colors">contact@tulparcommerce.com</a>
+        </div>
+        <div class="text-xs text-gray-700">&copy; 2026 Tulpar Commerce. All rights reserved.</div>
+    </footer>
+
+</body>
+</html>
