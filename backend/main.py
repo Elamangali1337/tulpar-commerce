@@ -54,41 +54,39 @@ class ContactForm(BaseModel):
 
 # Function to send email notifications
 def send_email_notification(form_data: ContactForm):
+    api_key = os.getenv("BREVO_API_KEY")
     sender = os.getenv("EMAIL_SENDER")
-    password = os.getenv("EMAIL_PASSWORD")
     receiver = os.getenv("EMAIL_RECEIVER")
 
-    if not sender or not password:
+    if not api_key or not sender or not receiver:
         print("[-] Email credentials are not configured.")
         return
 
-    # Format the email
-    msg = MIMEMultipart()
-    msg['From'] = sender
-    msg['To'] = receiver
-    msg['Subject'] = f"New website inquiry from {form_data.business_name}"
-
-    body = f"""
-    A new inquiry has been submitted on the website!
-    
-    Name: {form_data.name}
-    Business: {form_data.business_name}
-    Email: {form_data.email}
-    Phone: {form_data.phone}
-    
-    Message:
-    {form_data.message}
-    """
-    msg.attach(MIMEText(body, 'plain', 'utf-8'))
+    payload = {
+        "sender": {"name": "Tulpar Commerce Website", "email": sender},
+        "to": [{"email": receiver}],
+        "subject": f"New website inquiry from {form_data.business_name}",
+        "textContent": (
+            "A new inquiry has been submitted on the website!\n\n"
+            f"Name: {form_data.name}\n"
+            f"Business: {form_data.business_name}\n"
+            f"Email: {form_data.email}\n"
+            f"Phone: {form_data.phone}\n\n"
+            f"Message:\n{form_data.message}"
+        ),
+    }
 
     try:
-        # Connect to the Gmail server
-        server = smtplib.SMTP('smtp.gmail.com', 587)
-        server.starttls()
-        server.login(sender, password)
-        server.send_message(msg)
-        server.quit()
-        print("[+] Email notification sent successfully via Gmail!")
+        resp = httpx.post(
+            "https://api.brevo.com/v3/smtp/email",
+            headers={"api-key": api_key, "content-type": "application/json"},
+            json=payload,
+            timeout=15,
+        )
+        if resp.status_code in (200, 201):
+            print("[+] Email notification sent successfully via Brevo!")
+        else:
+            print(f"[-] Brevo error {resp.status_code}: {resp.text}")
     except Exception as e:
         print(f"[-] Error sending email: {e}")
 
