@@ -299,14 +299,15 @@
                     <!-- Телефон -->
                     <div>
                         <label for="phone" class="block text-sm font-medium text-gray-400 mb-2">Phone Number</label>
-                        <input type="tel" id="phone" name="phone" required class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors">
+                        <input type="tel" id="phone" name="phone" required pattern="\+?1?\d{9,15}" title="Digits only, 9-15 numbers, e.g. +12407283328"
+ class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors">
                     </div>
                 </div>
 
                 <!-- Сообщение -->
                 <div>
                     <label for="message" class="block text-sm font-medium text-gray-400 mb-2">How can we help you?</label>
-                    <textarea id="message" name="message" rows="4" required class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"></textarea>
+                    <textarea id="message" name="message" rows="4" required minlength="10" class="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold transition-colors resize-none"></textarea>
                 </div>
 
                 <!-- Сообщение об успешной отправке (скрыто по умолчанию) -->

@@ -141,7 +141,7 @@ COINGECKO_URL = "https://api.coingecko.com/api/v3/simple/price"
 
 # Простой кэш в памяти процесса
 _rates_cache = {"data": None, "timestamp": 0.0}
-RATES_CACHE_TTL = 60  # секунд
+RATES_CACHE_TTL = 300  # секунд
 
 
 async def get_rates() -> dict:
